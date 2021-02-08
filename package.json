@@ -1,5 +1,5 @@
 {
-  "name": "editor_json",
+  "name": "json_editor",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
