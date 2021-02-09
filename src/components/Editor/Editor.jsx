@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import classNames from 'classnames'
 import './Editor.sass'
+import Field from '../Field/Field.jsx'
 
 // TODO: contentEditable="true | false" редактирование DIV элемента
 
@@ -26,30 +27,13 @@ const Editor = ({ file }) => {
 
 	return (
 		<div className={classNames({ editor: true })}>
-			<div
-				className={classNames({ editor_menu: true })}
-				contentEditable=""
-			></div>
+			<div className={classNames({ editor_menu: true })} contentEditable="">
+				MENU
+			</div>
 
-			{/* {compl &&
-				compl.map((el) => <div contentEditable="true">{el.backgroung}</div>)} */}
 			{fileParse &&
 				Object.keys(fileParse).map((el) => (
-					<div
-						className={classNames({ item: true })}
-						key={`${el} ${fileParse[el]}`}
-					>
-						<div className={classNames({ item_key: true })} key={el}>
-							{el}:
-						</div>
-						<div
-							className={classNames({ item_value: true })}
-							// contentEditable="true"
-							key={fileParse[el]}
-						>
-							{fileParse[el]}
-						</div>
-					</div>
+					<Field key={el} fieldKey={el} value={fileParse[el]} />
 				))}
 		</div>
 	)
