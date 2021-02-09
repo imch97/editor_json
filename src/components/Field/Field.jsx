@@ -10,8 +10,13 @@ const Field = ({ fieldKey, value }) => {
 	const handleChange = (event) => {
 		const content = event.target.textContent
 		setValueField(content)
-		console.log(valueField)
+
+		console.log(key, ' log', valueField)
 	}
+
+	useEffect(() => {
+		console.log(key, ' eff', valueField)
+	}, [valueField])
 
 	return (
 		<div className={classNames({ item: true })}>
@@ -20,7 +25,7 @@ const Field = ({ fieldKey, value }) => {
 				className={classNames({ item_value: true })}
 				contentEditable="true"
 				suppressContentEditableWarning="true"
-				onClick={(e) => handleChange(e)}
+				onBlur={(e) => handleChange(e)}
 				value={valueField}
 			>
 				{valueField}

@@ -22,6 +22,7 @@ const Editor = ({ file }) => {
 			// return JSON.parse(reader.result)
 		}).then((result) => {
 			setFileParse(result)
+			console.log(fileParse)
 		})
 	}, [file])
 
@@ -32,8 +33,8 @@ const Editor = ({ file }) => {
 			</div>
 
 			{fileParse &&
-				Object.keys(fileParse).map((el) => (
-					<Field key={el} fieldKey={el} value={fileParse[el]} />
+				Object.entries(fileParse).map((el, index) => (
+					<Field key={el} fieldKey={el[(index, 0)]} value={el[(index, 1)]} />
 				))}
 		</div>
 	)
