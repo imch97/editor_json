@@ -5,23 +5,23 @@ import classNames from 'classnames'
 
 const Field = ({ fieldKey, value }) => {
 	const [key, setKey] = useState(fieldKey)
-	const [valueField, setValueField] = useState(value)
+	const [valueField, setValueField] = useState(value || '')
 
 	const handleChange = (event) => {
-		const content = event.target.textContent
+		const content = event.target.value
 		setValueField(content)
 
-		console.log(key, ' log', valueField)
+		// console.log(key, ' log', valueField)
 	}
 
-	useEffect(() => {
-		console.log(key, ' eff', valueField)
-	}, [valueField])
+	// useEffect(() => {
+	// 	console.log(key, ' eff', valueField)
+	// }, [valueField])
 
 	return (
 		<div className={classNames({ item: true })}>
 			<div className={classNames({ item_key: true })}>{key}:</div>
-			<div
+			{/* <div
 				className={classNames({ item_value: true })}
 				contentEditable={true}
 				suppressContentEditableWarning={true}
@@ -29,7 +29,12 @@ const Field = ({ fieldKey, value }) => {
 				value={valueField}
 			>
 				{valueField == '' ? "' '" : valueField}
-			</div>
+			</div> */}
+			<input
+				className={classNames({ item_value: true })}
+				value={valueField}
+				onChange={(e) => handleChange(e)}
+			/>
 		</div>
 	)
 }
