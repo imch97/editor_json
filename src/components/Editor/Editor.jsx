@@ -13,7 +13,7 @@ const getFiniteValue = (obj) => {
 			if (typeof o[prop] === 'object') {
 				getProp(o[prop])
 			} else {
-				console.log('Finite value: ', o[prop])
+				// console.log('Finite value: ', o[prop])
 				mas.push([prop, o[prop]])
 			}
 		}
@@ -38,7 +38,7 @@ const Editor = ({ file }) => {
 			// return JSON.parse(reader.result)
 		}).then((result) => {
 			setFileParse(result)
-			console.log(fileParse)
+			// console.log(fileParse)
 		})
 	}, [file])
 
@@ -49,29 +49,13 @@ const Editor = ({ file }) => {
 			</div>
 
 			{fileParse &&
-				getFiniteValue(fileParse).map((el) => (
-					<Field key={el} fieldKey={el[0]} value={el[1]} />
+				getFiniteValue(fileParse).map((el, index) => (
+					<Field
+						key={`${el[0]}:${el[1]} + ${index}`}
+						fieldKey={el[0]}
+						value={el[1]}
+					/>
 				))}
-
-			{/* {fileParse &&
-				Object.entries(fileParse).map((el, index) => (
-					<Field key={el} fieldKey={el[(index, 0)]} value={el[(index, 1)]} />
-				))} */}
-
-			{/* {fileParse &&
-				Object.entries(fileParse).map((el, index) =>
-					typeof el[(index, 1)] == 'object' ? (
-						Object.entries(el[(index, 1)]).map((ell, index) => (
-							<Field
-								key={ell}
-								fieldKey={ell[(index, 0)]}
-								value={ell[(index, 1)]}
-							/>
-						))
-					) : (
-						<Field key={el} fieldKey={el[(index, 0)]} value={el[(index, 1)]} />
-					)
-				)} */}
 		</div>
 	)
 }
