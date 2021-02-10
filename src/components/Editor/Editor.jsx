@@ -9,8 +9,11 @@ import Field from '../Field/Field.jsx'
 const getFiniteValue = (obj) => {
 	let mas = []
 	const getProp = (o) => {
-		for (var prop in o) {
+		for (let prop in o) {
 			if (typeof o[prop] === 'object') {
+				// mas.push([Object.keys(o)[Object.keys(o).length - 1], null], [])
+				if (o[prop].length !== undefined) mas.push([prop, null])
+				console.log('prop ', prop)
 				getProp(o[prop])
 			} else {
 				// console.log('Finite value: ', o[prop])

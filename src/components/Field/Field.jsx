@@ -28,7 +28,7 @@ const Field = ({ fieldKey, value }) => {
 				onBlur={(e) => handleChange(e)}
 				value={valueField}
 			>
-				{valueField}
+				{valueField == '' ? "' '" : valueField}
 			</div>
 		</div>
 	)
