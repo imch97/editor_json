@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/json_editor/static/css/main.9df11b4e.chunk.css",
-    "main.js": "/json_editor/static/js/main.853292bb.chunk.js",
-    "main.js.map": "/json_editor/static/js/main.853292bb.chunk.js.map",
+    "main.css": "/json_editor/static/css/main.d551c698.chunk.css",
+    "main.js": "/json_editor/static/js/main.af94d009.chunk.js",
+    "main.js.map": "/json_editor/static/js/main.af94d009.chunk.js.map",
     "runtime-main.js": "/json_editor/static/js/runtime-main.c154928f.js",
     "runtime-main.js.map": "/json_editor/static/js/runtime-main.c154928f.js.map",
     "static/js/2.39aef16d.chunk.js": "/json_editor/static/js/2.39aef16d.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.4bd4f5f1.chunk.js": "/json_editor/static/js/3.4bd4f5f1.chunk.js",
     "static/js/3.4bd4f5f1.chunk.js.map": "/json_editor/static/js/3.4bd4f5f1.chunk.js.map",
     "index.html": "/json_editor/index.html",
-    "static/css/main.9df11b4e.chunk.css.map": "/json_editor/static/css/main.9df11b4e.chunk.css.map",
+    "static/css/main.d551c698.chunk.css.map": "/json_editor/static/css/main.d551c698.chunk.css.map",
     "static/js/2.39aef16d.chunk.js.LICENSE.txt": "/json_editor/static/js/2.39aef16d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c154928f.js",
     "static/js/2.39aef16d.chunk.js",
-    "static/css/main.9df11b4e.chunk.css",
-    "static/js/main.853292bb.chunk.js"
+    "static/css/main.d551c698.chunk.css",
+    "static/js/main.af94d009.chunk.js"
   ]
 }
