@@ -23,8 +23,8 @@ const Field = ({ fieldKey, value }) => {
 			<div className={classNames({ item_key: true })}>{key}:</div>
 			<div
 				className={classNames({ item_value: true })}
-				contentEditable="true"
-				suppressContentEditableWarning="true"
+				contentEditable={true}
+				suppressContentEditableWarning={true}
 				onBlur={(e) => handleChange(e)}
 				value={valueField}
 			>
