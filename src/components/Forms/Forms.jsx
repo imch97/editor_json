@@ -72,10 +72,10 @@ const Forms = () => {
 	return (
 		<Form
 			schema={schema}
-			// onChange={log('changed')}
+			onChange={log('changed')}
 			onSubmit={(e) => send(e)}
 			onError={log('errors')}
-			liveValidate
+			// liveValidate
 		/>
 	)
 }
