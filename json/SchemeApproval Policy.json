@@ -1,0 +1,116 @@
+{
+  "type": "object",
+  "properties": {
+    "Approval Policy": {
+      "type": "object",
+      "properties": {
+        "Version": {
+          "type": "string"
+        },
+        "Schema": {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "string"
+            },
+            "Major": {
+              "type": "string"
+            },
+            "Minor": {
+              "type": "string"
+            }
+          },
+          "required": ["ID", "Major", "Minor"]
+        },
+        "Approval Groups": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "Route Templates": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string"
+                },
+                "Rank": {
+                  "type": "string"
+                },
+                "Record Types": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "Levels": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "Name": {
+                          "type": "string"
+                        },
+                        "Approvers": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      },
+                      "required": ["Name", "Approvers"]
+                    }
+                  ]
+                },
+                "Constraints": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "Type": {
+                          "type": "string"
+                        },
+                        "Name": {
+                          "type": "string"
+                        },
+                        "Values": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      },
+                      "required": ["Type", "Name", "Values"]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "Name",
+                "Rank",
+                "Record Types",
+                "Levels",
+                "Constraints"
+              ]
+            }
+          ]
+        }
+      },
+      "required": ["Version", "Schema", "Approval Groups", "Route Templates"]
+    }
+  },
+  "required": ["Approval Policy"]
+}
