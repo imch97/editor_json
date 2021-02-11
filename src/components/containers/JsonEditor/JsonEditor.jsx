@@ -12,7 +12,7 @@ const JsonEditor = () => {
 	return (
 		<div className={classNames({ JsonEditor: true })}>
 			<InputJsonFile files={setFile} />
-			<SelectFile files={setFile} />
+			{/* <SelectFile files={setFile} /> */}
 
 			{file && <Editor file={file} />}
 		</div>
