@@ -10,6 +10,7 @@ const InputJsonFile = ({ files }) => {
 		// setFile(event.target.files[0])
 		let formData = new FormData()
 		formData.append('file', event.target.files[0])
+		console.log(event.target.files[0])
 		const fi = formData.get('file')
 		// fileRead(fi)
 		setFile(fi)

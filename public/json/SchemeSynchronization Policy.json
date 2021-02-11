@@ -1,0 +1,308 @@
+{
+  "type": "object",
+  "properties": {
+    "Synchronization Policy": {
+      "type": "object",
+      "properties": {
+        "Version": {
+          "type": "string"
+        },
+        "Locations": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "System": {
+                  "type": "string"
+                },
+                "Name": {
+                  "type": "string"
+                },
+                "Server": {
+                  "type": "string"
+                },
+                "Service Account": {
+                  "type": "string"
+                },
+                "Service Password": {
+                  "type": "string"
+                },
+                "Urls": {
+                  "type": "object",
+                  "properties": {
+                    "Browser": {
+                      "type": "string"
+                    },
+                    "API": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["Browser", "API"]
+                }
+              },
+              "required": [
+                "System",
+                "Name",
+                "Server",
+                "Service Account",
+                "Service Password",
+                "Urls"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "System": {
+                  "type": "string"
+                },
+                "Name": {
+                  "type": "string"
+                },
+                "Server": {
+                  "type": "string"
+                },
+                "Service Account": {
+                  "type": "string"
+                },
+                "Service Password": {
+                  "type": "string"
+                },
+                "Urls": {
+                  "type": "object",
+                  "properties": {
+                    "Browser": {
+                      "type": "string"
+                    },
+                    "API": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["Browser", "API"]
+                }
+              },
+              "required": [
+                "System",
+                "Name",
+                "Server",
+                "Service Account",
+                "Service Password",
+                "Urls"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "System": {
+                  "type": "string"
+                },
+                "Name": {
+                  "type": "string"
+                },
+                "Server": {
+                  "type": "string"
+                },
+                "Urls": {
+                  "type": "object",
+                  "properties": {
+                    "Browser": {
+                      "type": "string"
+                    },
+                    "API": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["Browser", "API"]
+                },
+                "Service Account": {
+                  "type": "string"
+                },
+                "Service Password": {
+                  "type": "string"
+                },
+                "qTest Name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "System",
+                "Name",
+                "Server",
+                "Urls",
+                "Service Account",
+                "Service Password",
+                "qTest Name"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "System": {
+                  "type": "string"
+                },
+                "Name": {
+                  "type": "string"
+                },
+                "Server": {
+                  "type": "string"
+                },
+                "Urls": {
+                  "type": "object",
+                  "properties": {
+                    "Browser": {
+                      "type": "string"
+                    },
+                    "API": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["Browser", "API"]
+                },
+                "Service Account": {
+                  "type": "string"
+                },
+                "Service Password": {
+                  "type": "string"
+                },
+                "qTest Name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "System",
+                "Name",
+                "Server",
+                "Urls",
+                "Service Account",
+                "Service Password",
+                "qTest Name"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "System": {
+                  "type": "string"
+                },
+                "Name": {
+                  "type": "string"
+                },
+                "Server": {
+                  "type": "string"
+                },
+                "Service Account": {
+                  "type": "string"
+                },
+                "Service Password": {
+                  "type": "string"
+                },
+                "Urls": {
+                  "type": "object",
+                  "properties": {
+                    "Browser": {
+                      "type": "string"
+                    },
+                    "API": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["Browser", "API"]
+                }
+              },
+              "required": [
+                "System",
+                "Name",
+                "Server",
+                "Service Account",
+                "Service Password",
+                "Urls"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "System": {
+                  "type": "string"
+                },
+                "Name": {
+                  "type": "string"
+                },
+                "Server": {
+                  "type": "string"
+                },
+                "Service Account": {
+                  "type": "string"
+                },
+                "Service Password": {
+                  "type": "string"
+                },
+                "Urls": {
+                  "type": "object",
+                  "properties": {
+                    "Browser": {
+                      "type": "string"
+                    },
+                    "API": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["Browser", "API"]
+                }
+              },
+              "required": [
+                "System",
+                "Name",
+                "Server",
+                "Service Account",
+                "Service Password",
+                "Urls"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "System": {
+                  "type": "string"
+                },
+                "Name": {
+                  "type": "string"
+                },
+                "Server": {
+                  "type": "string"
+                },
+                "Urls": {
+                  "type": "object",
+                  "properties": {
+                    "Browser": {
+                      "type": "string"
+                    },
+                    "API": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["Browser", "API"]
+                },
+                "Service Account": {
+                  "type": "string"
+                },
+                "Service Password": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "System",
+                "Name",
+                "Server",
+                "Urls",
+                "Service Account",
+                "Service Password"
+              ]
+            }
+          ]
+        }
+      },
+      "required": ["Version", "Locations"]
+    }
+  },
+  "required": ["Synchronization Policy"]
+}
