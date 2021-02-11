@@ -11,7 +11,7 @@ const JsonEditor = () => {
 	const [file, setFile] = useState()
 	return (
 		<div className={classNames({ JsonEditor: true })}>
-			<InputJsonFile files={setFile} />
+			{/* <InputJsonFile files={setFile} /> */}
 			{/* <SelectFile files={setFile} /> */}
 
 			{file && <Editor file={file} />}
