@@ -1,72 +1,35 @@
 import Form from '@rjsf/material-ui'
+import { useState } from 'react'
 
-const Forms = () => {
+const Forms = ({ schema }) => {
+	const [hr, setHr] = useState('')
+
 	// const Form = JSONSchemaForm.default
-
-	const schema = {
-		type: 'object',
-		properties: {
-			'Synchronization Policy': {
-				type: 'object',
-				properties: {
-					Version: {
-						type: 'string',
-						minLength: 10,
-					},
-					Locations: {
-						type: 'array',
-						items: {
-							type: 'object',
-							properties: {
-								System: {
-									type: 'string',
-								},
-								Name: {
-									type: 'string',
-								},
-								Server: {
-									type: 'string',
-								},
-								'Service Account': {
-									type: 'string',
-								},
-								'Service Password': {
-									type: 'string',
-								},
-								Urls: {
-									type: 'object',
-									properties: {
-										Browser: {
-											type: 'string',
-										},
-										API: {
-											type: 'string',
-										},
-									},
-									required: ['Browser', 'API'],
-								},
-							},
-							required: [
-								'System',
-								'Name',
-								'Server',
-								'Service Account',
-								'Service Password',
-								'Urls',
-							],
-						},
-					},
-				},
-				required: ['Version', 'Locations'],
-			},
-		},
-		required: ['Synchronization Policy'],
-	}
 
 	const log = (type) => console.log(console, type)
 
 	const send = (event) => {
 		console.log(event)
+		console.log(event.formData)
+
+		var a = document.createElement('a')
+		document.body.appendChild(a)
+		a.style = 'display: none'
+
+		const element = event.formData
+		const file = new Blob([JSON.stringify(event.formData)], {
+			type: 'data:application/json',
+		})
+		element.href = URL.createObjectURL(file)
+		a.download = 'myFile.json'
+		setHr(element)
+		console.log(hr)
+
+		a.href = element.href
+		a.click()
+
+		// document.body.appendChild(element) // Required for this to work in FireFox
+		// element.click()
 	}
 
 	return (
@@ -75,6 +38,7 @@ const Forms = () => {
 			onChange={log('changed')}
 			onSubmit={(e) => send(e)}
 			onError={log('errors')}
+
 			// liveValidate
 		/>
 	)

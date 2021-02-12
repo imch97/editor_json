@@ -6,23 +6,61 @@ import Field from '../Field/Field.jsx'
 
 // TODO: contentEditable="true | false" редактирование DIV элемента
 
+// const getFiniteValue = (obj) => {
+// 	let mas = []
+// 	let count = 0
+// 	const getProp = (o) => {
+// 		for (let prop in o) {
+// 			if (typeof o[prop] === 'object') {
+// 				mas.push([prop, null])
+
+// 				getProp(o[prop])
+// 			} else {
+// 				console.log('Finite value: ', o[prop])
+
+// 				mas.push([prop, o[prop]])
+// 			}
+// 		}
+// 	}
+
+// 	getProp(obj)
+
+// 	return mas
+// }
+
 const getFiniteValue = (obj) => {
+	let handledFlag = 'temp__isAlreadyHandled__'
 	let mas = []
-	let count = 0
-	const getProp = (o) => {
-		for (let prop in o) {
+
+	const getProp = (o, stack) => {
+		let propertyPath
+
+		for (var prop in o) {
 			if (typeof o[prop] === 'object') {
-				mas.push([prop, null])
+				if (!o[prop][handledFlag]) {
+					Object.defineProperty(o[prop], handledFlag, {
+						value: true,
+						writable: false,
+						configurable: true,
+					})
 
-				getProp(o[prop])
+					if (!stack) {
+						propertyPath = '' + prop
+					} else propertyPath = stack + '.' + prop
+
+					getProp(o[prop], propertyPath)
+				} else {
+					propertyPath = stack + '.' + prop
+					console.error('Циклическая ссылка. Свойство: ' + propertyPath)
+				}
+				delete o[prop][handledFlag]
 			} else {
-				// console.log('Finite value: ', o[prop])
+				mas.push([stack, prop, o[prop]])
 
-				mas.push([prop, o[prop]])
+				console.log(stack, '-->', prop, o[prop])
 			}
 		}
 	}
-
 	getProp(obj)
 	return mas
 }
@@ -57,8 +95,9 @@ const Editor = ({ file }) => {
 				getFiniteValue(fileParse).map((el, index) => (
 					<Field
 						key={`${el[0]}:${el[1]} + ${index}`}
-						fieldKey={el[0]}
-						value={el[1]}
+						root={el[0]}
+						fieldKey={el[1]}
+						value={el[2]}
 					/>
 				))}
 		</div>
