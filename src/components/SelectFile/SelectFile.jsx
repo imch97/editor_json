@@ -1,6 +1,9 @@
 import './SelectFile.sass'
 import classNames from 'classnames'
 import { useState, useEffect } from 'react'
+import SynchronizationPolicyUISchema from '../../uiSchemes/SynchronizationPolicyUISchema.js'
+import RecordsManagementPolicyUIScheme from '../../uiSchemes/RecordsManagementPolicyUIScheme.js'
+import ApprovalPolicyUIScheme from '../../uiSchemes/ApprovalPolicyUIScheme.js'
 
 const options = [
 	{
@@ -16,6 +19,7 @@ const options = [
 						},
 						Locations: {
 							type: 'array',
+
 							items: {
 								type: 'object',
 								properties: {
@@ -47,6 +51,7 @@ const options = [
 										required: ['Browser', 'API'],
 									},
 								},
+
 								required: [
 									'System',
 									'Name',
@@ -63,6 +68,7 @@ const options = [
 			},
 			required: ['Synchronization Policy'],
 		},
+
 		label: 'Synchronization Policy',
 	},
 	{
@@ -100,84 +106,74 @@ const options = [
 									},
 									Definitions: {
 										type: 'array',
-										items: [
-											{
-												type: 'object',
-												properties: {
-													Systems: {
-														type: 'array',
-														items: [
-															{
-																type: 'string',
-															},
-														],
-													},
-													Aliases: {
-														type: 'array',
-														items: [
-															{
-																type: 'object',
-																properties: {
-																	'Policy Field': {
-																		type: 'string',
-																	},
-																	'System Field': {
-																		type: 'string',
-																	},
-																},
-																required: ['Policy Field', 'System Field'],
-															},
-														],
-													},
-													'Item Types': {
-														type: 'array',
-														items: [
-															{
-																type: 'string',
-															},
-														],
-													},
-													'Singular Name': {
-														type: 'string',
-													},
-													'Plural Name': {
-														type: 'string',
-													},
-													'Ownership Description': {
-														type: 'string',
-													},
-													'Content Originator': {
+										items: {
+											type: 'object',
+											properties: {
+												Systems: {
+													type: 'array',
+													items: {
 														type: 'string',
 													},
 												},
-												required: [
-													'Systems',
-													'Aliases',
-													'Item Types',
-													'Singular Name',
-													'Plural Name',
-													'Ownership Description',
-													'Content Originator',
-												],
+												Aliases: {
+													type: 'array',
+													items: {
+														type: 'object',
+														properties: {
+															'Policy Field': {
+																type: 'string',
+															},
+															'System Field': {
+																type: 'string',
+															},
+														},
+														required: ['Policy Field', 'System Field'],
+													},
+												},
+												'Item Types': {
+													type: 'array',
+													items: {
+														type: 'string',
+													},
+												},
+												'Singular Name': {
+													type: 'string',
+												},
+												'Plural Name': {
+													type: 'string',
+												},
+												'Ownership Description': {
+													type: 'string',
+												},
+												'Content Originator': {
+													type: 'string',
+												},
 											},
-										],
+											required: [
+												'Systems',
+												'Aliases',
+												'Item Types',
+												'Singular Name',
+												'Plural Name',
+												'Ownership Description',
+												'Content Originator',
+											],
+										},
 									},
 									Fields: {
 										type: 'array',
-										items: [
-											{
-												type: 'object',
-												properties: {
-													Name: {
-														type: 'string',
-													},
-													'Is Data': {
-														type: 'string',
-													},
+										items: {
+											type: 'object',
+											properties: {
+												Name: {
+													type: 'string',
 												},
-												required: ['Name', 'Is Data'],
+												'Is Data': {
+													type: 'string',
+												},
 											},
-										],
+											required: ['Name', 'Is Data'],
+										},
 									},
 								},
 								required: ['Name', 'Definitions', 'Fields'],
@@ -298,24 +294,28 @@ const options = [
 	},
 ]
 
-const SelectFile = ({ files }) => {
+console.log('properties', Object.keys(options[0].value.properties)[0])
+
+const SelectFile = ({ files, uiSchema }) => {
 	const [file, setFile] = useState(options[0].value)
 	const [selectedOption, setSelectedOption] = useState()
+	const [selectedUISchema, setSelectedUISchema] = useState()
 
 	const handleChange = (selectedOption) => {
 		setSelectedOption(selectedOption)
-		// let formData = new FormData()
-		// var request = require('request')
-		// request.responseType = 'application/json'
-		// console.log('anser ', request(`http://localhost:3000${selectedOption}`))
-		// formData.append('file', request(`http://localhost:3000${selectedOption}`))
-
-		// const fi = formData.get('file')
-		// setFile(fi)
-		// console.log(`Option selected:`, selectedOption)
-		// console.log('fi')
-		// console.log('selectedOption', selectedOption)
 		setFile(JSON.parse(selectedOption))
+
+		const nameSchema = Object.keys(JSON.parse(selectedOption).properties)[0]
+		if (nameSchema == Object.keys(options[0].value.properties)[0]) {
+			uiSchema(SynchronizationPolicyUISchema)
+		}
+
+		if (nameSchema == Object.keys(options[1].value.properties)[0]) {
+			uiSchema(RecordsManagementPolicyUIScheme)
+		}
+		if (nameSchema == Object.keys(options[2].value.properties)[0]) {
+			uiSchema(ApprovalPolicyUIScheme)
+		}
 	}
 
 	useEffect(() => {

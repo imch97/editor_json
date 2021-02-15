@@ -2,7 +2,7 @@
   "Synchronization Policy": {
     "Version": "VERA Demo Env - 0.0.0.2",
     "Locations": [
-     {
+      {
         "System": "JIRA",
         "Name": "Tx3 Demo Jira Server",
         "Server": "http://jira-demo.tx3services.com:8080",

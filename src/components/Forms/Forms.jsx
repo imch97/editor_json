@@ -1,7 +1,7 @@
 import Form from '@rjsf/material-ui'
 import { useState, useEffect } from 'react'
 
-const Forms = ({ schema, editFormData }) => {
+const Forms = ({ schema, editFormData, editUISchema }) => {
 	const [hr, setHr] = useState('')
 	const [fileParse, setFileParse] = useState(editFormData)
 
@@ -42,6 +42,17 @@ const Forms = ({ schema, editFormData }) => {
 		a.click()
 	}
 
+	// const uiSchema = {
+	// 	'Synchronization Policy': {
+	// 		'ui:order': ['Version', 'Locations'],
+	// 		Locations: {
+	// 			'ui:options': {
+	// 				orderable: false,
+	// 			},
+	// 		},
+	// 	},
+	// }
+
 	return (
 		<Form
 			schema={schema}
@@ -49,6 +60,7 @@ const Forms = ({ schema, editFormData }) => {
 			onSubmit={(e) => send(e)}
 			onError={log('errors')}
 			formData={fileParse}
+			uiSchema={editUISchema}
 			// liveValidate
 		/>
 	)
