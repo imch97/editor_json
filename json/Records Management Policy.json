@@ -1,658 +1,627 @@
 {
-    "Records Management Policy":
-    {
-        "Version": "Tx3 Demo 1.0.0.2",
-        "Schema":
-        {
-            "ID": "http://tx3services.com/schemas/0/0/records-management-policy.json",
-            "Major": "0",
-            "Minor": "0"
-        },
-        "Record Types": [
-            {
-                "Name": "Test Case",
-                "Definitions": [
-                    {
-                        "Systems": ["qTest"],
-                        "Aliases": [
-                            {
-                                "Policy Field": "ID",
-                                "System Field": "Req ID"
-                            }
-                        ],
-                        "Item Types": ["test-case"],
-                        "Singular Name": "Test Case",
-                        "Plural Name": "Test Cases",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Status",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Type",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Assigned To",
-                        "Is Data": "Yes"
-                    },
-					{
-						"Name": "Description",
-						"Is Data": "Yes"
-					},
-					{
-						"Name": "Precondition",
-						"Is Data": "Yes"
-					},
-					{
-						"Name": "Priority",
-						"Is Data": "Yes"
-					},
-					{
-						"Name": "qTest Version ID",
-						"Is Data": "Yes"
-					},
-                    {
-                        "Name": "GxP",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "qTest Test Step",
-                "Definitions": [
-                    {
-                        "Systems": ["qTest"],
-                        "Aliases": [
-                            {
-                                "Policy Field": "ID",
-                                "System Field": "Req ID"
-                            }
-                        ],
-                        "Item Types": ["test-step"],
-                        "Singular Name": "Test Step",
-                        "Plural Name": "Test Steps",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Description",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Expected Result",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "Test Run",
-                "Definitions": [
-                    {
-                        "Systems": ["qTest"],
-                        "Aliases": [
-                            {
-                                "Policy Field": "ID",
-                                "System Field": "Req ID"
-                            }
-                        ],
-                        "Item Types": ["test-run"],
-                        "Singular Name": "Test Run",
-                        "Plural Name": "Test Runs",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Status",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Target Release/Build",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Test Case ID",
-                        "Is Data": "Yes"
-                    },
-					{
-						"Name": "Approval Requirement (Custom Field)",
-						"Is Data": "Yes"
-					},
-					{
-						"Name": "Custom Field",
-						"Is Data": "Yes"
-					},
-					{
-						"Name": "Environment",
-						"Is Data": "Yes"
-					},
-					{
-						"Name": "Assigned To",
-						"Is Data": "Yes"
-					},
-					{
-						"Name": "Priority",
-						"Is Data": "Yes"
-					},
-                    {
-                        "Name": "GxP",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "qTest Test Log",
-                "Definitions": [
-                    {
-                        "Systems": ["qTest"],
-                        "Aliases": [
-                            {
-                                "Policy Field": "ID",
-                                "System Field": "Req ID"
-                            }
-                        ],
-                        "Item Types": ["test-log"],
-                        "Singular Name": "Test Log",
-                        "Plural Name": "Test Logs",
-                        "Ownership Description": "created",
-                        "Content Originator": "Tester"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Test Case Name",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Test Case Version",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Status",
-                        "Is Data": "Yes"
-                    }, 
-                    {
-                        "Name": "Execution Type",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Target Release/Build",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Executed Start",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Executed End",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Execution Log Notes",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "qTest Test Step Log",
-                "Definitions": [
-                    {
-                        "Systems": ["qTest"],
-                        "Aliases": [
-                            {
-                                "Policy Field": "ID",
-                                "System Field": "Req ID"
-                            }
-                        ],
-                        "Item Types": ["test-step-log"],
-                        "Singular Name": "Test Step Log",
-                        "Plural Name": "Test StepLogs",
-                        "Ownership Description": "created",
-                        "Content Originator": "Tester"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Status",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Description",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Expected Result",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Actual Result",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "Story",
-                "Base Record Type": "Issue",
-                "Definitions": [
-                    {
-                        "Systems": ["JIRA"],
-                        "Aliases": [
-                            {
-                                "Policy Field": "ID",
-                                "System Field": "Req ID"
-                            }
-                        ],
-                        "Item Types": ["Story"],
-                        "Singular Name": "Story",
-                        "Plural Name": "Stories",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Category",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Resolution",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "XRay Scenario",
-                "Base Record Type": "XRay Test",
-                "Definitions": [
-                    {
-                        "Systems": [
-                            "JIRA"
-                        ],
-                        "Item Types": [
-                            "Test"
-                        ],
-                        "Constraints": [
-                            {
-                                "Type": "Field Is Equal",
-                                "Name": "Test Type",
-                                "Value": "Cucumber"
-                            }
-                        ],
-                        "Singular Name": "Test",
-                        "Plural Name": "Tests",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Test Type",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Cucumber Test Type",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Cucumber Scenario",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "XRay Generic Test",
-                "Base Record Type": "XRay Test",
-                "Definitions": [
-                    {
-                        "Systems": [
-                            "JIRA"
-                        ],
-                        "Item Types": [
-                            "Test"
-                        ],
-                        "Constraints": [
-                            {
-                                "Type": "Field Is Equal",
-                                "Name": "Test Type",
-                                "Value": "Generic"
-                            }
-                        ],
-                        "Singular Name": "Test",
-                        "Plural Name": "Tests",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Test Type",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Generic Test Definition",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "XRay Manual Test",
-                "Base Record Type": "XRay Test",
-                "Definitions": [
-                    {
-                        "Systems": [
-                            "JIRA"
-                        ],
-                        "Item Types": [
-                            "Test"
-                        ],
-                        "Constraints": [
-                            {
-                                "Type": "Field Is Equal",
-                                "Name": "Test Type",
-                                "Value": "Manual"
-                            }
-                        ],
-                        "Singular Name": "Test",
-                        "Plural Name": "Tests",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Test Type",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Manual Test Steps",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "XRay Test",
-                "Base Record Type": "Issue",
-                "Definitions": [
-                    {
-                        "Systems": [
-                            "JIRA"
-                        ],
-                        "Item Types": [
-                            "Test"
-                        ],
-                        "Singular Name": "Test",
-                        "Plural Name": "Tests",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Test Type",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "XRay Pre-Condition",
-                "Base Record Type": "Issue",
-                "Definitions": [
-                    {
-                        "Systems": [
-                            "JIRA"
-                        ],
-                        "Item Types": [
-                            "Pre-Condition"
-                        ],
-                        "Singular Name": "Pre-Condition",
-                        "Plural Name": "Pre-Conditions",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Pre-Condition Type",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Conditions",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "XRay Test Plan",
-                "Base Record Type": "Issue",
-                "Definitions": [
-                    {
-                        "Systems": [
-                            "JIRA"
-                        ],
-                        "Item Types": [
-                            "Test Plan"
-                        ],
-                        "Singular Name": "Test Plan",
-                        "Plural Name": "Test Plans",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Test Plan Status",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Tests associated with a Test Plan",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Begin Date",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "End Date",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "XRay Execution",
-                "Base Record Type": "Issue",
-                "Definitions": [
-                    {
-                        "Systems": [
-                            "JIRA"
-                        ],
-                        "Item Types": [
-                            "Test Execution",
-                            "Sub Test Execution"
-                        ],
-                        "Singular Name": "Test Plan",
-                        "Plural Name": "Test Plans",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Test Execution Status",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Tests association with a Test Execution",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Test Environments",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Test Plan",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Begin Date",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "End Date",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-            {
-                "Name": "Defect",
-                "Base Record Type": "Issue",
-                "Definitions": [
-                    {
-                        "Systems": ["JIRA"],
-                        "Aliases": [
-                            {
-                                "Policy Field": "ID",
-                                "System Field": "Req ID"
-                            }
-                        ],
-                        "Item Types": ["Bug"],
-                        "Singular Name": "Bug",
-                        "Plural Name": "Bugs",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Category",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Resolution",
-                        "Is Data": "Yes"
-                    }
-                ]
-            },
-           
-            {
-                "Name": "Issue",
-                "Definitions": [
-                    {
-                        "Systems": ["JIRA"],
-                        "Aliases": [
-                            {
-                                "Policy Field": "ID",
-                                "System Field": "Req ID"
-                            }
-                        ],
-                        "Singular Name": "Issue",
-                        "Plural Name": "Issues",
-                        "Ownership Description": "created",
-                        "Content Originator": "Author"
-                    }
-                ],
-                "Fields": [
-                    {
-                        "Name": "Component",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Description",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Summary",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Issue Type",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Acceptance Criteria",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Functional Specification",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Design Specification",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Configuration Specification",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Risk Classification",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Created",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Started",
-                        "Is Data": "Yes"
-                    },     
-                    {
-                        "Name": "Due Started",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Due Date",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Updated",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Priority",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Labels",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Original Estimate",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Remaining Estimate",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Affects Version/s",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Fix Version/s",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "Resolution Detail",
-                        "Is Data": "Yes"
-                    },
-                    {
-                        "Name": "GxP",
-                        "Is Data": "Yes"
-                    },
-					{
-                        "Name": "Revision Reason",
-                        "Is Data": "Yes"
-                    }
-                ]
-            }
+  "Records Management Policy": {
+    "Version": "Tx3 Demo 1.0.0.2",
+    "Schema": {
+      "ID": "http://tx3services.com/schemas/0/0/records-management-policy.json",
+      "Major": "0",
+      "Minor": "0"
+    },
+    "Record Types": [
+      {
+        "Name": "Test Case",
+        "Definitions": [
+          {
+            "Systems": ["qTest"],
+            "Aliases": [
+              {
+                "Policy Field": "ID",
+                "System Field": "Req ID"
+              }
+            ],
+            "Item Types": ["test-case"],
+            "Singular Name": "Test Case",
+            "Plural Name": "Test Cases",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Status",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Type",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Assigned To",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Description",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Precondition",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Priority",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "qTest Version ID",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "GxP",
+            "Is Data": "Yes"
+          }
         ]
-    }
+      },
+      {
+        "Name": "qTest Test Step",
+        "Definitions": [
+          {
+            "Systems": ["qTest"],
+            "Aliases": [
+              {
+                "Policy Field": "ID",
+                "System Field": "Req ID"
+              }
+            ],
+            "Item Types": ["test-step"],
+            "Singular Name": "Test Step",
+            "Plural Name": "Test Steps",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Description",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Expected Result",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "Test Run",
+        "Definitions": [
+          {
+            "Systems": ["qTest"],
+            "Aliases": [
+              {
+                "Policy Field": "ID",
+                "System Field": "Req ID"
+              }
+            ],
+            "Item Types": ["test-run"],
+            "Singular Name": "Test Run",
+            "Plural Name": "Test Runs",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Status",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Target Release/Build",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Test Case ID",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Approval Requirement (Custom Field)",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Custom Field",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Environment",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Assigned To",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Priority",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "GxP",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "qTest Test Log",
+        "Definitions": [
+          {
+            "Systems": ["qTest"],
+            "Aliases": [
+              {
+                "Policy Field": "ID",
+                "System Field": "Req ID"
+              }
+            ],
+            "Item Types": ["test-log"],
+            "Singular Name": "Test Log",
+            "Plural Name": "Test Logs",
+            "Ownership Description": "created",
+            "Content Originator": "Tester"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Test Case Name",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Test Case Version",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Status",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Execution Type",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Target Release/Build",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Executed Start",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Executed End",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Execution Log Notes",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "qTest Test Step Log",
+        "Definitions": [
+          {
+            "Systems": ["qTest"],
+            "Aliases": [
+              {
+                "Policy Field": "ID",
+                "System Field": "Req ID"
+              }
+            ],
+            "Item Types": ["test-step-log"],
+            "Singular Name": "Test Step Log",
+            "Plural Name": "Test StepLogs",
+            "Ownership Description": "created",
+            "Content Originator": "Tester"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Status",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Description",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Expected Result",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Actual Result",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "Story",
+        "Base Record Type": "Issue",
+        "Definitions": [
+          {
+            "Systems": ["JIRA"],
+            "Aliases": [
+              {
+                "Policy Field": "ID",
+                "System Field": "Req ID"
+              }
+            ],
+            "Item Types": ["Story"],
+            "Singular Name": "Story",
+            "Plural Name": "Stories",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Category",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Resolution",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "XRay Scenario",
+        "Base Record Type": "XRay Test",
+        "Definitions": [
+          {
+            "Systems": ["JIRA"],
+            "Item Types": ["Test"],
+            "Constraints": [
+              {
+                "Type": "Field Is Equal",
+                "Name": "Test Type",
+                "Value": "Cucumber"
+              }
+            ],
+            "Singular Name": "Test",
+            "Plural Name": "Tests",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Test Type",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Cucumber Test Type",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Cucumber Scenario",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "XRay Generic Test",
+        "Base Record Type": "XRay Test",
+        "Definitions": [
+          {
+            "Systems": ["JIRA"],
+            "Item Types": ["Test"],
+            "Constraints": [
+              {
+                "Type": "Field Is Equal",
+                "Name": "Test Type",
+                "Value": "Generic"
+              }
+            ],
+            "Singular Name": "Test",
+            "Plural Name": "Tests",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Test Type",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Generic Test Definition",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "XRay Manual Test",
+        "Base Record Type": "XRay Test",
+        "Definitions": [
+          {
+            "Systems": ["JIRA"],
+            "Item Types": ["Test"],
+            "Constraints": [
+              {
+                "Type": "Field Is Equal",
+                "Name": "Test Type",
+                "Value": "Manual"
+              }
+            ],
+            "Singular Name": "Test",
+            "Plural Name": "Tests",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Test Type",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Manual Test Steps",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "XRay Test",
+        "Base Record Type": "Issue",
+        "Definitions": [
+          {
+            "Systems": ["JIRA"],
+            "Item Types": ["Test"],
+            "Singular Name": "Test",
+            "Plural Name": "Tests",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Test Type",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "XRay Pre-Condition",
+        "Base Record Type": "Issue",
+        "Definitions": [
+          {
+            "Systems": ["JIRA"],
+            "Item Types": ["Pre-Condition"],
+            "Singular Name": "Pre-Condition",
+            "Plural Name": "Pre-Conditions",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Pre-Condition Type",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Conditions",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "XRay Test Plan",
+        "Base Record Type": "Issue",
+        "Definitions": [
+          {
+            "Systems": ["JIRA"],
+            "Item Types": ["Test Plan"],
+            "Singular Name": "Test Plan",
+            "Plural Name": "Test Plans",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Test Plan Status",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Tests associated with a Test Plan",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Begin Date",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "End Date",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "XRay Execution",
+        "Base Record Type": "Issue",
+        "Definitions": [
+          {
+            "Systems": ["JIRA"],
+            "Item Types": ["Test Execution", "Sub Test Execution"],
+            "Singular Name": "Test Plan",
+            "Plural Name": "Test Plans",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Test Execution Status",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Tests association with a Test Execution",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Test Environments",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Test Plan",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Begin Date",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "End Date",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+      {
+        "Name": "Defect",
+        "Base Record Type": "Issue",
+        "Definitions": [
+          {
+            "Systems": ["JIRA"],
+            "Aliases": [
+              {
+                "Policy Field": "ID",
+                "System Field": "Req ID"
+              }
+            ],
+            "Item Types": ["Bug"],
+            "Singular Name": "Bug",
+            "Plural Name": "Bugs",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Category",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Resolution",
+            "Is Data": "Yes"
+          }
+        ]
+      },
+
+      {
+        "Name": "Issue",
+        "Definitions": [
+          {
+            "Systems": ["JIRA"],
+            "Aliases": [
+              {
+                "Policy Field": "ID",
+                "System Field": "Req ID"
+              }
+            ],
+            "Singular Name": "Issue",
+            "Plural Name": "Issues",
+            "Ownership Description": "created",
+            "Content Originator": "Author"
+          }
+        ],
+        "Fields": [
+          {
+            "Name": "Component",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Description",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Summary",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Issue Type",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Acceptance Criteria",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Functional Specification",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Design Specification",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Configuration Specification",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Risk Classification",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Created",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Started",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Due Started",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Due Date",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Updated",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Priority",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Labels",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Original Estimate",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Remaining Estimate",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Affects Version/s",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Fix Version/s",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Resolution Detail",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "GxP",
+            "Is Data": "Yes"
+          },
+          {
+            "Name": "Revision Reason",
+            "Is Data": "Yes"
+          }
+        ]
+      }
+    ]
+  }
 }
