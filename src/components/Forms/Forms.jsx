@@ -22,8 +22,8 @@ const Forms = ({ schema, editFormData, editUISchema }) => {
 	const log = (type) => console.log(console, type)
 
 	const send = (event) => {
-		console.log(event)
-		console.log(event.formData)
+		// console.log(event)
+		// console.log(event.formData)
 
 		var a = document.createElement('a')
 		document.body.appendChild(a)
@@ -56,9 +56,9 @@ const Forms = ({ schema, editFormData, editUISchema }) => {
 	return (
 		<Form
 			schema={schema}
-			onChange={(e) => console.log(e)}
+			// onChange={(e) => console.log(e)}
 			onSubmit={(e) => send(e)}
-			onError={log('errors')}
+			// onError={log('errors')}
 			formData={fileParse}
 			uiSchema={editUISchema}
 			// liveValidate

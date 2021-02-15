@@ -18,6 +18,9 @@ const ApprovalPolicyUIScheme = {
 			items: {
 				'Record Types': {
 					'ui:options': {
+						semantic: {
+							wrapItem: false,
+						},
 						orderable: false,
 					},
 				},

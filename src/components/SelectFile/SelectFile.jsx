@@ -294,8 +294,6 @@ const options = [
 	},
 ]
 
-console.log('properties', Object.keys(options[0].value.properties)[0])
-
 const SelectFile = ({ files, uiSchema }) => {
 	const [file, setFile] = useState(options[0].value)
 	const [selectedOption, setSelectedOption] = useState()
