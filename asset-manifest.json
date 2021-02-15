@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/json_editor/static/css/main.d06b4df3.chunk.css",
-    "main.js": "/json_editor/static/js/main.28f282bb.chunk.js",
-    "main.js.map": "/json_editor/static/js/main.28f282bb.chunk.js.map",
+    "main.js": "/json_editor/static/js/main.6580c341.chunk.js",
+    "main.js.map": "/json_editor/static/js/main.6580c341.chunk.js.map",
     "runtime-main.js": "/json_editor/static/js/runtime-main.5a23b961.js",
     "runtime-main.js.map": "/json_editor/static/js/runtime-main.5a23b961.js.map",
-    "static/js/2.16036de9.chunk.js": "/json_editor/static/js/2.16036de9.chunk.js",
-    "static/js/2.16036de9.chunk.js.map": "/json_editor/static/js/2.16036de9.chunk.js.map",
+    "static/js/2.d5a35479.chunk.js": "/json_editor/static/js/2.d5a35479.chunk.js",
+    "static/js/2.d5a35479.chunk.js.map": "/json_editor/static/js/2.d5a35479.chunk.js.map",
     "static/js/3.940a18f4.chunk.js": "/json_editor/static/js/3.940a18f4.chunk.js",
     "static/js/3.940a18f4.chunk.js.map": "/json_editor/static/js/3.940a18f4.chunk.js.map",
     "index.html": "/json_editor/index.html",
     "static/css/main.d06b4df3.chunk.css.map": "/json_editor/static/css/main.d06b4df3.chunk.css.map",
-    "static/js/2.16036de9.chunk.js.LICENSE.txt": "/json_editor/static/js/2.16036de9.chunk.js.LICENSE.txt"
+    "static/js/2.d5a35479.chunk.js.LICENSE.txt": "/json_editor/static/js/2.d5a35479.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5a23b961.js",
-    "static/js/2.16036de9.chunk.js",
+    "static/js/2.d5a35479.chunk.js",
     "static/css/main.d06b4df3.chunk.css",
-    "static/js/main.28f282bb.chunk.js"
+    "static/js/main.6580c341.chunk.js"
   ]
 }
