@@ -1,10 +1,23 @@
 import Form from '@rjsf/material-ui'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-const Forms = ({ schema }) => {
+const Forms = ({ schema, editFormData }) => {
 	const [hr, setHr] = useState('')
+	const [fileParse, setFileParse] = useState(editFormData)
 
-	// const Form = JSONSchemaForm.default
+	useEffect(() => {
+		const prom = new Promise((resolve, reject) => {
+			let reader = new FileReader()
+
+			reader.readAsText(editFormData)
+
+			reader.onload = function () {
+				resolve(JSON.parse(reader.result))
+			}
+		}).then((result) => {
+			setFileParse(result)
+		})
+	}, [editFormData])
 
 	const log = (type) => console.log(console, type)
 
@@ -27,18 +40,15 @@ const Forms = ({ schema }) => {
 
 		a.href = element.href
 		a.click()
-
-		// document.body.appendChild(element) // Required for this to work in FireFox
-		// element.click()
 	}
 
 	return (
 		<Form
 			schema={schema}
-			onChange={log('changed')}
+			onChange={(e) => console.log(e)}
 			onSubmit={(e) => send(e)}
 			onError={log('errors')}
-
+			formData={fileParse}
 			// liveValidate
 		/>
 	)

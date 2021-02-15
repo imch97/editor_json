@@ -13,6 +13,7 @@ const InputJsonFile = ({ files }) => {
 		console.log(event.target.files[0])
 		const fi = formData.get('file')
 		// fileRead(fi)
+
 		setFile(fi)
 
 		// setHaveJson(true)

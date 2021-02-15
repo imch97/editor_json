@@ -14,11 +14,11 @@ const JsonEditor = () => {
 
 	return (
 		<div className={classNames({ JsonEditor: true })}>
-			{/* <InputJsonFile files={setFile} />
-			{file && <Editor file={file} />} */}
+			<InputJsonFile files={setFile} />
+			{/* {file && <Editor file={file} />} */}
 
 			<SelectFile files={setSchemes} />
-			{schemes && <Forms schema={schemes} />}
+			{schemes && file && <Forms schema={schemes} editFormData={file} />}
 		</div>
 	)
 }
